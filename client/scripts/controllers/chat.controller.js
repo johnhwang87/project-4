@@ -2,14 +2,14 @@ angular
   .module('Project4')
   .controller('ChatCtrl', ChatCtrl);
 
-function ChatCtrl ($scope, $reactive, $stateParams, ionicScrollDelegate, $timeout){
+function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeout){
   $reactive(this).attach($scope);
 
   let chatId = $stateParams.chatId;
   let isIOS = ionic.Platform.isWebView() && ionic.Platform.isIOS();
 
   this.sendMessage = sendMessage;
-  this.inputUp = inputUP;
+  this.inputUp = inputUp;
   this.inputDown = inputDown;
   this.closeKeyboard = closeKeyboard;
 
@@ -20,7 +20,7 @@ function ChatCtrl ($scope, $reactive, $stateParams, ionicScrollDelegate, $timeou
     },
     data() {
       return Chats.findOne(chatId);
-    }
+    },
   });
 // sending a message
   function sendMessage () {
