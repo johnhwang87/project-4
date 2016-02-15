@@ -23,6 +23,13 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
       return Chats.findOne(chatId);
     },
   });
+
+  // adding auto-scroll to the messages list to keep the view scrolled down when a new message arrives
+  $scope.$watchCollection('chat.messages', (oldVal, newVal) => {
+    let animate = oldVal.length !== newVal.length;
+    $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(animate);
+  });
+
 // sending a message
   function sendMessage () {
     if (_.isEmpty(this.message)) return;
