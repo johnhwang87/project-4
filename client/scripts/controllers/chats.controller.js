@@ -11,7 +11,7 @@ function ChatsCtrl ($scope, $reactive) {
     data() {
       return Chats.find();
     }
-  })
+  });
 
   function remove (chat) {
     Chats.remove(chat._id);

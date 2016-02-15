@@ -1,11 +1,11 @@
 // server file, initialization code
 
-Meteor.startup(function (){
+Meteor.startup(function () {
   if (Chats.find().count() !== 0) return;
 
   Messages.remove({});
 
-    let messages = [
+  let messages = [
 
     {
       text: 'Hey, it\'s me',
@@ -23,13 +23,13 @@ Meteor.startup(function (){
       text: 'This is wicked good ice cream.',
       timestamp: moment().subtract(2, 'weeks').toDate()
     }
-    ];
+  ];
 
-    messages.forEach((m) => {
-      Messages.insert(m);
-    });
+  messages.forEach((m) => {
+    Messages.insert(m);
+  });
 
-    let chats = [
+  let chats = [
     {
       name: 'Bryan Wallace',
       picture: 'https://randomuser.me/api/portraits/thumb/lego/1.jpg'
@@ -46,15 +46,12 @@ Meteor.startup(function (){
       name: 'Ray Edwards',
       picture: 'https://randomuser.me/api/portraits/thumb/men/2.jpg'
     }
+  ];
 
-    ];
-
-    chats.forEach((chat) => {
-      let message = Messages.findOne({chatId: {$exists: false}});
-      chat.lastMessage = message;
-      let chatId = Chats.insert(chat);
-      Messages.update(message._id, {$set: {chatId: chatId}})
-    });
-
-
+  chats.forEach((chat) => {
+    let message = Messages.findOne({chatId: {$exists: false}});
+    chat.lastMessage = message;
+    let chatId = Chats.insert(chat);
+    Messages.update(message._id, {$set: {chatId: chatId}})
+  });
 });
