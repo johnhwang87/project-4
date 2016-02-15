@@ -24,7 +24,7 @@ Meteor.startup(function () {
       timestamp: moment().subtract(2, 'weeks').toDate()
     }
   ];
-
+// adding messages to database
   messages.forEach((m) => {
     Messages.insert(m);
   });

@@ -8,7 +8,13 @@ function config($stateProvider, $urlRouterProvider){
     .state('tab', {
       url: '/tab',
       abstract: true,
-      templateUrl: 'client/templates/tabs.html'
+      templateUrl: 'client/templates/tabs.html',
+      // limiting tab states using Meteor.user() and returns the user object only if user is logged in
+      resolve: {
+        user() {
+          return Meteor.user();
+        }
+      }
     })
     .state('tab.chats', {
       url: '/chats',
@@ -30,7 +36,42 @@ function config($stateProvider, $urlRouterProvider){
           controller: 'ChatCtrl as chat'
         }
       }
+    })
+    // route for loging
+    .state('login', {
+      url: '/login',
+        templateUrl: 'client/templates/login.html',
+        controller: 'LoginCtrl as logger'
+    })
+    // route for confirmation. Delete?
+    .state('confirmation', {
+      url: '/confirmation/:phone',
+        templateUrl: 'client/templates/confirmation.html',
+        controller: 'ConfirmationCtrl as confirmation'
+    })
+    // route for profile
+    .state('profile', {
+      url: '/profile',
+        templateUrl: 'client/templates/profile.html',
+        controller: 'ProfileCtrl as profile',
+        // requirement for user to be logged in to see page
+        resolve: {
+          user() {
+            return Meteor.user();
+          }
+        }
+    })
+    // adding logout feature
+    .state('tab.settings', {
+      url: '/settings',
+      views: {
+        'tab-settings': {
+          templateUrl: 'client/templates/settings.html',
+          controller: 'SettingsCtrl as settings',
+        }
+      }
     });
+
 
     $urlRouterProvider.otherwise('tab/chats');
 }
