@@ -1,4 +1,7 @@
-
+// SMS.twilio = {
+//   ACCOUNT_SID: Meteor.settings.TWILIO.ACbfd2fae9a69aa2ec1dd9b17cceeca20e,
+//   AUTH_TOKEN: Meteor.settings.TWILIO.a5655c01b3738917173ff9be260f93fc
+// };
 
 if (Meteor.isServer) {
 // configuring to serverside to make this work

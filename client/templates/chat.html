@@ -1,8 +1,8 @@
 
 <!-- view page for chat details -->
-<ion-view title="{{ chat | chatName }}">
+<ion-view title="{{ chat.data | chatName }}">
   <ion-nav-buttons side="right">
-    <button class="button button-clear"><img class="header-picture" ng-src="{{ chat | chatPicture }}"></button>
+    <button class="button button-clear"><img class="header-picture" ng-src="{{ chat.data | chatPicture }}"></button>
   </ion-nav-buttons>
   <ion-content class="chat" delegate-handle="chatScroll">
     <div class="message-list">
@@ -10,7 +10,7 @@
       <!-- identifying users from data -->
         <div class="message" ng-class="message.userId === $root.currentUser._id ? 'message-mine' : 'message-other'">
           <div class="message-text">{{ message.text }}</div>
-          <span class="message-timestamp">{{ message.timestamp | amDateFormat: 'HH:MM' }}</span>
+          <span class="message-timestamp">{{ message.timestamp | amDateFormat: 'HH:mm' }}</span>
         </div>
       </div>
     </div>

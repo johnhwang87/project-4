@@ -15,3 +15,4 @@ function SettingsCtrl($scope, $reactive, $state) {
     });
   }
 }
+

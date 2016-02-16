@@ -14,7 +14,7 @@ function ProfileCtrl ($scope, $reactive, $state, $ionicPopup, $log, $ionicLoadin
 
   // implementing controller methods that use camera-ui API to get image from device, and then run server method for updating the image
     function updatePicture () {
-    MeteorCameraUI.getPicture({ width: 60, height: 60 }, function (err, data) {
+    MeteorCameraUI.getPicture({ width: 250, height: 250 }, function (err, data) {
      // what is this sorcery...
       if (err && err.error == 'cancel') {
         return;
