@@ -7,7 +7,7 @@ function LoginCtrl($scope, $reactive, $state, $ionicLoading, $ionicPopup, $log) 
 
   this.login = login;
 
-  ////////////
+
 
   function login() {
     if (_.isEmpty(this.phone)) return;

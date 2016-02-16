@@ -20,10 +20,10 @@ function ConfirmationCtrl($scope, $reactive, $state, $ionicPopup, $log) {
   }
 //  give out error if verification fails
   function handleError(err) {
-    $log.error('Verfication error ', err);
+    $log.error('Verification error ', err);
 
     $ionicPopup.alert({
-      title: err.reason || 'Verfication failed',
+      title: err.reason || 'Verification failed',
       template: 'Please try again',
       okType: 'button-positive button-clear'
     });

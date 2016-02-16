@@ -1,4 +1,8 @@
 <ion-view view-title="Chats">
+<!-- adding view for new chat -->
+  <ion-nav-buttons side="right">
+    <button ng-click="chats.showNewChatModal()" class="button button-clear button-positive button-icon ion-ios-compose-outline"></button>
+  </ion-nav-buttons>
   <ion-content>
 
     <ion-list>
@@ -7,8 +11,9 @@
         class="item-chat item-remove-animate item-avatar item-icon-right"
         type="item-text-wrap"
         href="#/tab/chats/{{chat._id}}">
-          <img ng-src="{{chat.picture}}">
-          <h2>{{chat.name}}</h2>
+          <img ng-src="{{chat | chatPicture }}">
+          <!-- using filters created -->
+          <h2>{{chat | chatName }}</h2>
           <p>{{chat.lastMessage.text}}</p>
           <!-- below, using the calendar filter, and calling it -->
           <span class="last-message-timestamp">{{chat.lastMessage.timestamp | calendar}}</span>

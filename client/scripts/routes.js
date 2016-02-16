@@ -13,6 +13,10 @@ function config($stateProvider, $urlRouterProvider){
       resolve: {
         user() {
           return Meteor.user();
+        },
+        // calling on the subscription in the client side
+        chats() {
+          return Meteor.subscribe('chats');
         }
       }
     })
@@ -73,5 +77,5 @@ function config($stateProvider, $urlRouterProvider){
     });
 
 
-    $urlRouterProvider.otherwise('tab/chats');
+    $urlRouterProvider.otherwise('/login');
 }
