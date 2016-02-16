@@ -4,6 +4,8 @@
   </ion-nav-buttons>
 
   <ion-content class="profile">
+
+  <!-- adding button for adding/editing user profile image -->
     <a class="profile-picture positive" ng-click="profile.updatePicture()">
       <div ng-if="profile.currentUser.profile.picture">
         <img ng-src="{{ profile.currentUser.profile.picture }}" alt="profile picture">
