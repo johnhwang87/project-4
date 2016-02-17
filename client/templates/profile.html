@@ -5,46 +5,50 @@
 
   <ion-content class="profile">
 
+    <div>
+        <img class="profile-pic" ng-src="{{currentUser.profile.picture}}">
+    </div>
   <!-- adding button for adding/editing user profile image -->
-    <a class="profile-picture positive" ng-click="profile.updatePicture()">
-      <div ng-if="profile.currentUser.profile.picture">
+    <a class="profile-picture icon-left ion-ios-camera button button-outline button-assertive" ng-click="profile.updatePicture()">Pic Me!
+     <!--  <div ng-if="profile.currentUser.profile.picture">
         <img ng-src="{{ profile.currentUser.profile.picture }}" alt="profile picture">
         edit
       </div>
       <div ng-if="!profile.picture" class="upload-placehoder">
-        Take Photo
-      </div>
+
+      </div> -->
     </a>
-
+<!--
     <div class="instructions">
-      Enter your name and add an optional profile picture
-    </div>
+      Enter your info!
+    </div> -->
 
-    <div>
-        <img class="profile-pic" ng-src="{{currentUser.profile.picture}}">
-    </div>
 <!-- name -->
     <div class="list profile-name">
       <label class="item item-input">
+        <span class="input-label">Name:</span>
         <input ng-model="profile.name" on-return="profile.updateName()" type="text" placeholder="Your name">
       </label>
-    </div>
+
 <!-- age -->
-    <div class="list profile-name">
+
       <label class="item item-input">
+      <span class="input-label">Age:</span>
         <input ng-model="profile.age" on-return="profile.updateAge()" type="text" placeholder="Your age">
       </label>
-    </div>
+
 <!-- gender -->
-    <div class="list profile-name">
+
       <label class="item item-input">
+      <span class="input-label">Gender:</span>
         <input ng-model="profile.gender" on-return="profile.updateGender()" type="text" placeholder="Your gender">
       </label>
-    </div>
+
 <!-- Bio -->
-    <div class="list profile-name">
+
       <label class="item item-input">
-        <input ng-model="profile.bio" on-return="profile.updateBio()" type="text" placeholder="Your Bio, share yourself~">
+        <!-- <input ng-model="profile.bio" on-return="profile.updateBio()"> -->
+        <textarea class="bio" ng-model="profile.bio" on-return="profile.updateBio()" placeholder="Your Bio, share yoself~"></textarea>
       </label>
     </div>
 

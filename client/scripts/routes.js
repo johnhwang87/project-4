@@ -65,6 +65,15 @@ function config($stateProvider, $urlRouterProvider){
           }
         }
     })
+    // adding review
+    .state('tab.reviews', {
+      url: '/reviews',
+      views: {
+        'tab-reviews': {
+        templateUrl: 'client/templates/reviews.html',
+        controller: 'ReviewsCtrl as reviews'
+      }
+    })
     // adding logout feature
     .state('tab.settings', {
       url: '/settings',
