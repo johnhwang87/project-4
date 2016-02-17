@@ -12,14 +12,16 @@
         edit
       </div>
       <div ng-if="!profile.picture" class="upload-placehoder">
-        Add photo
+        Take Photo
       </div>
     </a>
 
     <div class="instructions">
       Enter your name and add an optional profile picture
     </div>
-
+    <div>
+        <img class="profile-pic" ng-src="{{currentUser.profile.picture}}">
+    </div>
     <div class="list profile-name">
       <label class="item item-input">
         <input ng-model="profile.name" on-return="profile.updateName()" type="text" placeholder="Your name">
