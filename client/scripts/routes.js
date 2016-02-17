@@ -71,8 +71,9 @@ function config($stateProvider, $urlRouterProvider){
       views: {
         'tab-reviews': {
         templateUrl: 'client/templates/reviews.html',
-        controller: 'ReviewsCtrl as reviews'
-      }
+        controller: 'ReviewsCtrl as reviews',
+          }
+        }
     })
     // adding logout feature
     .state('tab.settings', {

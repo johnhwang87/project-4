@@ -7,8 +7,14 @@ function ProfileCtrl ($scope, $reactive, $state, $ionicPopup, $log, $ionicLoadin
   // defining Meteor user
   let user = Meteor.user();
   let name = user && user.profile ? user.profile.name : '';
+  let age = user && user.profile ? user.profile.age : '';
+  let bio = user && user.profile ? user.profile.bio : '';
+  let gender = user && user.profile ? user.profile.gender : '';
 
   this.name = name;
+  this.age = age;
+  this.gender = gender;
+  this.bio = bio;
   this.updateName = updateName;
   this.updatePicture = updatePicture;
   this.updateAge = updateAge;
