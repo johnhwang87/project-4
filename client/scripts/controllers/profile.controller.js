@@ -11,6 +11,36 @@ function ProfileCtrl ($scope, $reactive, $state, $ionicPopup, $log, $ionicLoadin
   this.name = name;
   this.updateName = updateName;
   this.updatePicture = updatePicture;
+  this.updateAge = updateAge;
+  this.updateGender = updateGender;
+  this.updateBio = updateBio;
+
+  function updateBio () {
+    if (_.isEmpty(this.bio)) return;
+
+    Meteor.call('updateBio', this.bio, (err) => {
+      if (err) return handleError(err);
+      $state.go('tab.chats');
+    });
+  }
+
+  function updateGender () {
+    if (_.isEmpty(this.gender)) return;
+
+    Meteor.call('updateGender', this.gender, (err) => {
+      if (err) return handleError(err);
+      $state.go('tab.chats');
+    });
+  }
+
+  function updateAge () {
+    if (_.isEmpty(this.age)) return;
+
+    Meteor.call('updateAge', this.age, (err) => {
+      if (err) return handleError(err);
+      $state.go('tab.chats');
+    });
+  }
 
   // implementing controller methods that use camera-ui API to get image from device, and then run server method for updating the image
     function updatePicture () {

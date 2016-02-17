@@ -1,6 +1,6 @@
 <ion-view title="Profile">
   <ion-nav-buttons side="right">
-    <button ng-click="profile.updateName()" ng-disabled="!profile.name || profile.name.length === 0" class="button button-clear button-positive">Done</button>
+    <button ng-click="profile.updateName(); profile.updateAge(); profile.updateGender(); profile.updateBio();" ng-disabled="!profile.name || profile.name.length === 0" class="button button-clear button-positive">Done</button>
   </ion-nav-buttons>
 
   <ion-content class="profile">
@@ -19,13 +19,36 @@
     <div class="instructions">
       Enter your name and add an optional profile picture
     </div>
+
     <div>
         <img class="profile-pic" ng-src="{{currentUser.profile.picture}}">
     </div>
+<!-- name -->
     <div class="list profile-name">
       <label class="item item-input">
         <input ng-model="profile.name" on-return="profile.updateName()" type="text" placeholder="Your name">
       </label>
     </div>
+<!-- age -->
+    <div class="list profile-name">
+      <label class="item item-input">
+        <input ng-model="profile.age" on-return="profile.updateAge()" type="text" placeholder="Your age">
+      </label>
+    </div>
+<!-- gender -->
+    <div class="list profile-name">
+      <label class="item item-input">
+        <input ng-model="profile.gender" on-return="profile.updateGender()" type="text" placeholder="Your gender">
+      </label>
+    </div>
+<!-- Bio -->
+    <div class="list profile-name">
+      <label class="item item-input">
+        <input ng-model="profile.bio" on-return="profile.updateBio()" type="text" placeholder="Your Bio, share yourself~">
+      </label>
+    </div>
+
+
+
   </ion-content>
 </ion-view>
