@@ -1,8 +1,8 @@
-<ion-modal-view ng-controller="NewReviewsCtrl as reviews">
+<ion-modal-view ng-controller="NewReviewsCtrl as review">
   <ion-header-bar>
     <h1 class="title">Review this Lover/Sucker</h1>
       <div class="buttons">
-        <button class="button button-clear button-positive" ng-click="reviews.hideNewReviewsModal()">Cancel</button>
+        <button class="button button-clear button-positive" ng-click="review.hideNewReviewsModal()">Cancel</button>
     </div>
   </ion-header-bar>
     <div class="list">
@@ -10,8 +10,9 @@
         <textarea placeholder="Choose your words very, very, very carefully..." class="review"></textarea>
       </label>
 
-      <button class="button button-block button-assertive" ng-click="reviews.newReview(user._id)">Submit</button>
     </div>
+      <button class="button button-block button-assertive" ng-click="review.sendReview()">Submit</button>
+      <!-- <div ng-click="reviews.newReview();">asdfasdfasdf</div> -->
 
 
 

@@ -2,7 +2,7 @@ angular
   .module('Project4')
   .controller('ChatCtrl', ChatCtrl);
 
-function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeout, $ionicPopup, $log){
+function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeout, $ionicPopup, $log, NewReviews){
   $reactive(this).attach($scope);
 
   let chatId = $stateParams.chatId;
@@ -12,7 +12,7 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
   this.inputUp = inputUp;
   this.inputDown = inputDown;
   this.closeKeyboard = closeKeyboard;
-
+  this.showNewReviewsModal = showNewReviewsModal;
 
 // angular meteor helpers
   this.helpers({
@@ -31,8 +31,10 @@ function ChatCtrl ($scope, $reactive, $stateParams, $ionicScrollDelegate, $timeo
     $ionicScrollDelegate.$getByHandle('chatScroll').scrollBottom(animate);
   });
 
-// attempting video message...
 
+  function showNewReviewsModal() {
+    NewReviews.showModal();
+  }
 // sending a message
   function sendMessage () {
     if (_.isEmpty(this.message)) return;

@@ -16,7 +16,6 @@ function NewChatCtrl($scope, $reactive, $state, NewChat) {
       return Meteor.users.find({ _id: { $ne: Meteor.userId() } });
     }
   });
-
     function hideNewChatModal() {
       NewChat.hideModal();
     }

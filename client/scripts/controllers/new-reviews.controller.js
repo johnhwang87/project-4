@@ -2,34 +2,43 @@ angular
   .module('Project4')
   .controller('NewReviewsCtrl', NewReviewsCtrl);
 
-function NewReviewsCtrl($scope, $reactive, $state, NewReviews){
+function NewReviewsCtrl($scope, $reactive, $state, $stateParams, NewReviews){
   $reactive(this).attach($scope);
 
+  let chatId = $stateParams.chatId;
   this.hideNewReviewsModal = hideNewReviewsModal;
-  // this.newReview = newReview;
+  this.sendReview = sendReview;
 
   this.subscribe('users');
   this.helpers({
-    users() {
-      return Meteor.users.find({ _id: { $ne: Meteor.userId() } });
+    data() {
+      return Chats.findOne(chatId);
     }
   });
-
+// console.log(users)
   function hideNewReviewsModal() {
     NewReviews.hideModal();
   }
+// console.log(user._id)
+  function sendReview() {
+    // if (_.isEmpty(this.review)) return;
+    //   console.log(this.review)
+      // if (reviews) {
+      //   return goToChat(reviews._id)
+      // }
+    Meteor.call('newReview', {
+      text: this.review,
+      type: 'text',
+      chatId: chatId
 
-  function newReview(userId) {
-    let reviews = Reviews.findOne({ userIds: { $all: [Meteor.userId(), userId] } });
-console.log('hi')
-      if (reviews) {
-        return goToChat(chat)
-      }
-    Meteor.call('newReview', userId, goToChat);
-  }
+  });
+      console.log(this.review);
+    delete this.review;
+    console.log("hi")
+}
 
-   function goToChat(reviewId) {
-    hideNewReviewsModal();
-    return $state.go('tab.chat', { reviewId: reviewId });
-   }
+   // function goToChat(chatId) {
+   //  hideNewReviewsModal();
+   //  return $state.go('tab.chat', { chatId: chatId });
+   // }
 }

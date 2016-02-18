@@ -12,7 +12,6 @@ function SettingsCtrl($scope, $reactive, $state) {
     Meteor.logout((err) => {
       // if (!err) return;
       $state.go('login');
-      console.log('hi')
     });
   }
 }

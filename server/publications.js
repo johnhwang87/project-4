@@ -3,8 +3,6 @@ Meteor.publish('users', function () {
   return Meteor.users.find({}, { fields: { profile: 1 } });
 });
 
-
-
 // send each client only the chats and messages he is apart of
 // Messages from those chats need to be added to publication, and
 // need to make a joined collections publication. reywood:publish-composite

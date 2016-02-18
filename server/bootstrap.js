@@ -2,6 +2,9 @@
 
 Meteor.startup(function () {
   if (Reviews.find().count() !== 0) return;
+      // Reviews.insert({
+      //   'text' : 'Mm'
+      // });
 
 
     // Accounts.createUserWithPhone({
