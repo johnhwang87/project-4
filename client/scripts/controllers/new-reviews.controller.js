@@ -9,15 +9,27 @@ function NewReviewsCtrl($scope, $reactive, $state, NewReviews){
   // this.newReview = newReview;
 
   this.subscribe('users');
-
+  this.helpers({
+    users() {
+      return Meteor.users.find({ _id: { $ne: Meteor.userId() } });
+    }
+  });
 
   function hideNewReviewsModal() {
-    console.log('WTF')
     NewReviews.hideModal();
   }
 
-  function newReview() {
-    // Meteor.call('newReviews', userId);
+  function newReview(userId) {
+    let reviews = Reviews.findOne({ userIds: { $all: [Meteor.userId(), userId] } });
+console.log('hi')
+      if (reviews) {
+        return goToChat(chat)
+      }
+    Meteor.call('newReview', userId, goToChat);
   }
 
+   function goToChat(reviewId) {
+    hideNewReviewsModal();
+    return $state.go('tab.chat', { reviewId: reviewId });
+   }
 }

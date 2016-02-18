@@ -10,8 +10,9 @@ function SettingsCtrl($scope, $reactive, $state) {
   // function to logg out the user.
   function logout() {
     Meteor.logout((err) => {
-      if (!err) return;
+      // if (!err) return;
       $state.go('login');
+      console.log('hi')
     });
   }
 }

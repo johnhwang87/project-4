@@ -3,19 +3,7 @@
 Meteor.startup(function () {
   if (Reviews.find().count() !== 0) return;
 
-  Reviews.remove({});
 
-  let reviews = [
-    {
-      text: "worst date ever. Peed in pants. gg"
-    }
-
-
-
-  ];
-  reviews.forEach((r) => {
-    Reviews.insert(r);
-  });
     // Accounts.createUserWithPhone({
     //   phone: '+9099999999',
     //   profile: {

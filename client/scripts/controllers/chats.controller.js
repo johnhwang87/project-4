@@ -21,7 +21,6 @@ function ChatsCtrl ($scope, $reactive, NewChat, NewReviews) {
   }
 
   function showNewReviewsModal() {
-    console.log('wtf')
     NewReviews.showModal();
   }
 

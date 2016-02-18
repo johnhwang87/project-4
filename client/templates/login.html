@@ -1,10 +1,12 @@
-<ion-view title="Your Digits">
+<ion-view title="Login">
   <ion-nav-buttons side="right">
     <button ng-click="logger.login()" ng-disabled="!logger.phone || logger.phone.length === 0" class="button button-clear button-positive">Done</button>
   </ion-nav-buttons>
   <ion-content class="login">
+  <h3 class="text-center instructions">Welcome to DogBird!</h3>
+  <img src="/logo.png">
     <div class="text-center instructions">
-      Please confirm your country code and enter your phone number
+      Please enter your phone number to begin lovin~
     </div>
     <div class="list">
       <label class="item item-input">
