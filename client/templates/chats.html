@@ -19,6 +19,9 @@
           <span class="last-message-timestamp">{{chat.lastMessage.timestamp | calendar}}</span>
           <i class="icon ion-chevron-right icon-accessory"></i>
           <!-- adding a delete button -->
+          <ion-option-button class="button-balanced" ng-click="chats.showNewReviewsModal()">
+            Review
+          </ion-option-button>
           <ion-option-button class="button-assertive" ng-click="chats.remove(chat)">
             Delete
           </ion-option-button>

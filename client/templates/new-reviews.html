@@ -1,0 +1,18 @@
+<ion-modal-view ng-controller="NewReviewsCtrl as reviews">
+  <ion-header-bar>
+    <h1 class="title">Review this Lover/Sucker</h1>
+      <div class="buttons">
+        <button class="button button-clear button-positive" ng-click="reviews.hideNewReviewsModal()">Cancel</button>
+    </div>
+  </ion-header-bar>
+    <div class="list">
+      <label class="item item-input">
+        <textarea placeholder="Choose your words very, very, very carefully..." class="review"></textarea>
+      </label>
+
+      <button ng-click="reviews.newReview();" class="button button-block button-assertive">Submit</button>
+    </div>
+
+
+
+</ion-modal-view>

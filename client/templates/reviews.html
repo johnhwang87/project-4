@@ -1,11 +1,15 @@
 <ion-view view-title="Reviews">
+  <ion-content>
+    <ion-list>
+
+      <ion-item
+        ng-repeat="reviews in chats.data"
+        type="item-text-wrap">
+          <img ng-src="{{reviews | chatPicture }}">
 
 
 
-
-
-
-
-
-
+      </ion-item>
+    </ion-list>
+  </ion-content>
 </ion-view>

@@ -2,11 +2,12 @@ angular
   .module('Project4')
   .controller('ChatsCtrl', ChatsCtrl);
 
-function ChatsCtrl ($scope, $reactive, NewChat) {
+function ChatsCtrl ($scope, $reactive, NewChat, NewReviews) {
   $reactive(this).attach($scope);
 
   // adding variable for new chat modal
   this.showNewChatModal = showNewChatModal;
+  this.showNewReviewsModal = showNewReviewsModal;
   this.remove = remove;
 
   this.helpers({
@@ -19,7 +20,13 @@ function ChatsCtrl ($scope, $reactive, NewChat) {
     NewChat.showModal();
   }
 
+  function showNewReviewsModal() {
+    console.log('wtf')
+    NewReviews.showModal();
+  }
+
   function remove (chat) {
     Meteor.call('removeChat', chat._id);
   }
+
 }
