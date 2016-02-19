@@ -26,13 +26,14 @@ function NewReviewsCtrl($scope, $reactive, $state, $stateParams, NewReviews){
       // if (reviews) {
       //   return goToChat(reviews._id)
       // }
+      console.log(this.review)
     Meteor.call('newReview', {
       text: this.review,
       type: 'text',
       chatId: chatId
 
   });
-      console.log(this.review);
+    console.log(this.review);
     delete this.review;
     console.log("hi")
 }
