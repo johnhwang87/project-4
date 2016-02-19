@@ -5,22 +5,7 @@
       <button class="button button-clear button-positive" ng-click="chat.hideNewChatModal()">Cancel</button>
     </div>
   </ion-header-bar>
-<!--
   <ion-content>
-    <div class="list">
-      <a ng-repeat="user in chat.users" ng-click="chat.newChat(user._id)" class="item">
-        <h2>{{user.profile.name}}</h2>
-        <p>
-          Hey there!
-        </p>
-      </a>
-    </div>
-  </ion-content>
-</ion-modal-view> -->
-
-
-  <ion-content>
-
     <div class="list card">
       <a ng-repeat="user in chat.users" ng-click="chat.newChat(user._id)" class="item">
         <h2>{{user.profile.name}}, {{user.profile.age}}</h2>
@@ -31,8 +16,6 @@
           <p>{{user.profile.bio}}</p>
         </div>
       </a>
-
     </div>
-
   </ion-content>
 </ion-modal-view>
