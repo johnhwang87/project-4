@@ -10,7 +10,7 @@
       <a ng-repeat="user in chat.users" ng-click="chat.newChat(user._id)" class="item">
         <h2>{{user.profile.name}}, {{user.profile.age}}</h2>
        <div class="item item-image">
-          <img src="{{user.profile.picture}}">
+          <img src="{{user.profile.picture || '/default.png'}}">
         </div>
         <div class="item">
           <p>{{user.profile.bio}}</p>
