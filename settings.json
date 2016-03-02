@@ -1,8 +1,8 @@
 {
   "TWILIO": {
-    "FROM": "+6465833528",
-    "SID": "ACbfd2fae9a69aa2ec1dd9b17cceeca20e",
-    "TOKEN": "a5655c01b3738917173ff9be260f93fc"
+    "FROM": "",
+    "SID": "",
+    "TOKEN": ""
   },
   "ACCOUNTS_PHONE": {
     "ADMIN_NUMBERS": ["123456789", "987654321"],
